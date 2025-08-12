@@ -1,5 +1,8 @@
 # Brave Links Opener
 
+[![CI](https://github.com/yusufakajose/brave-links-opener/actions/workflows/ci.yml/badge.svg)](https://github.com/yusufakajose/brave-links-opener/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Open URLs from a text file in Brave Browser in a single window with multiple tabs.
 
 ## Features
@@ -41,6 +44,8 @@ python3 open_brave_tabs.py links.txt --no-new-window
 - One URL per line
 - Lines starting with `#` and blank lines are ignored
 - Lines without a scheme are prefixed with `https://` (or `http://` for localhost/private IPs)
+
+Example: see `examples/links.txt`.
  
 ## Testing
 

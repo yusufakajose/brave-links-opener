@@ -1,0 +1,12 @@
+# Example links file
+# Lines starting with # are ignored.
+# Blank lines are ignored.
+
+example.com
+https://www.brave.com
+localhost:8080
+192.168.1.50
+
+# Flatpak docs
+https://docs.flatpak.org
+
