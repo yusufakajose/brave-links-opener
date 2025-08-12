@@ -145,7 +145,8 @@ def read_urls(links_path: str) -> List[str]:
     return urls
 
 
-_SCHEME_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9+\.\-]*:(//)?")
+_SCHEME_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9+\.\-]*://")
+_COLON_ONLY_SCHEMES = ("mailto:", "magnet:")
 
 
 def normalize_url_candidate(text: str) -> Optional[str]:
@@ -159,8 +160,8 @@ def normalize_url_candidate(text: str) -> Optional[str]:
     if not candidate:
         return None
 
-    # Already has a scheme (http, https, file, mailto, magnet, etc.)
-    if _SCHEME_RE.match(candidate):
+    # Already has a scheme (http://, https://, file://, etc.), or known colon-only schemes
+    if candidate.startswith(_COLON_ONLY_SCHEMES) or _SCHEME_RE.match(candidate):
         return candidate
 
     # Prefer http for localhost and RFC1918 private ranges
