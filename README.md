@@ -20,6 +20,17 @@ Open URLs from a text file in Brave Browser in a single window with multiple tab
 python3 open_brave_tabs.py /path/to/links.txt
 ```
 
+### Install as a command (recommended)
+Install with `pipx` to get the `brave-open` command on your PATH:
+```bash
+pipx install .
+```
+
+Then run:
+```bash
+brave-open /path/to/links.txt
+```
+
 ### Options
 - `--browser` Specify Brave command (e.g., `/usr/bin/brave-browser`, `brave`, or `flatpak run com.brave.Browser`).
 - `--incognito` Open in an incognito window.

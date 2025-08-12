@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "brave-links-opener"
+version = "0.1.0"
+description = "Open a list of URLs in Brave Browser in a single window with multiple tabs"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Yusuf A.", email = "" }
+]
+keywords = ["brave", "browser", "links", "urls", "automation"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+]
+
+[project.urls]
+Homepage = "https://github.com/yusufakajose/brave-links-opener"
+Issues = "https://github.com/yusufakajose/brave-links-opener/issues"
+
+[project.scripts]
+brave-open = "open_brave_tabs:main"
+
+[tool.hatch.build]
+include = [
+  "open_brave_tabs.py",
+  "README.md",
+  "LICENSE",
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+  "open_brave_tabs.py",
+]
+
+
