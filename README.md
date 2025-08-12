@@ -41,3 +41,26 @@ python3 open_brave_tabs.py links.txt --no-new-window
 - One URL per line
 - Lines starting with `#` and blank lines are ignored
 - Lines without a scheme are prefixed with `https://` (or `http://` for localhost/private IPs)
+ 
+## Testing
+
+This repository includes a small pytest suite.
+
+### Run tests locally
+Option A (virtual environment):
+```bash
+sudo apt install -y python3-pip python3-venv
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+pytest -q
+```
+
+Option B (system Python user install):
+```bash
+python3 -m pip install --user pytest
+python3 -m pytest -q
+```
+
+### Continuous Integration
+GitHub Actions runs the test suite on push/PR for Python 3.8 and 3.12 via `.github/workflows/ci.yml`.

@@ -3,7 +3,7 @@
 Open a list of URLs (one per line) in Brave Browser in a single window with multiple tabs.
 
 Usage:
-  python3 Untitled-1.py /path/to/links.txt
+  python3 open_brave_tabs.py /path/to/links.txt
 
 Options:
   --browser 
